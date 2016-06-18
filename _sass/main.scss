@@ -1,0 +1,72 @@
+//// Site variables
+// Variables which can change depending on the site you're developing
+
+
+//// Imports: default to the "_sass" dir
+// Settings
+@import 'settings';
+@import 'settings.functions';
+@import 'settings.mixins';
+
+//Objects
+@import 'object.wrappers';
+@import 'object.grid';
+
+//Elements
+@import 'element.typography';
+
+//Components
+
+// Utilities
+@import 'utility.helpers';
+
+
+//// Site styles: You can add your SASS/CSS below, or create a new file.
+//// I would recommend seperating into components, for better maintainability.
+.col { padding: 10px; margin-bottom: 5px; }
+
+.demo-items {
+  background-color: rgb(241, 85, 62);
+  color: rgb(255,255,255);
+  font-size: 1.4rem;
+  padding: 10px;
+}
+
+.header {
+  @extend %col-16;
+  @extend.demo-items;
+}
+
+.main {
+  @extend %col-10;
+  @extend.demo-items;
+}
+
+.sidebar {
+  @extend %col-6;
+  @extend %mobile-none;
+
+  background-color: darken(rgb(241, 85, 62), 10%);
+  color: rgb(255,255,255);
+  font-size: 1.4rem;
+  padding: 10px;
+}
+
+.offset-by-4 {
+  @extend %offset-by-4;
+}
+
+// Example of all columns
+@for $n from 1 through $grid-columns {
+  .column#{$n} {
+    @extend %col-#{$n};
+  }
+}
+
+
+
+.footer {
+  @extend %col-full;
+
+  @extend.demo-items;
+}
