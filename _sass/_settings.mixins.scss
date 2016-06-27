@@ -122,7 +122,7 @@
 //   }
 // }
 @mixin tablet {
-  @media (min-width: #{$bp-larger-phablet}) and (max-width: #{$bp-larger-tablet- 1px}) {
+  @media (min-width: #{$bp-larger-phablet}) and (max-width: #{$bp-larger-tablet} - 1px) {
     @content;
   }
 }

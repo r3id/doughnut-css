@@ -36,6 +36,10 @@
   .col {
     margin-left: $grid-gutter;
 
+    &:first-child {
+      margin-left: 0;
+    }
+
     &.flow { float: right; }
   }
 
